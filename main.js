@@ -41,3 +41,18 @@ function drop(ev) {
     var data = ev.dataTransfer.getData("text");
     ev.target.appendChild(document.getElementById(data));
 }
+
+function changeTheme() {
+    const body = document.querySelector('body');
+    const button = document.querySelector('button');
+    const theme = document.getElementById('theme');
+    if (theme.value === 'dark') {
+        body.classList.add('dark');
+        button.classList.add('dark');
+        theme.value = 'light';
+    } else {
+        body.classList.remove('dark');
+        button.classList.remove('dark');
+        theme.value = 'dark';
+    }
+}
