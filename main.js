@@ -41,3 +41,8 @@ function drop(ev) {
     var data = ev.dataTransfer.getData("text");
     ev.target.appendChild(document.getElementById(data));
 }
+
+function onDragStart(event) {
+    event.dataTransfer.setData('text/plain', event.target.id);
+    event.currentTarget.style.backgroundColor = 'yellow';
+}
